@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  background-color: #f4f6f9;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #1D2531;
+  color: white;
+  /* padding: 0 24px; */
+  position: fixed;
+  height: 100%;
+
+}
+
+.logo {
+  height: 70px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  background-color: #1A202B;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.side-sub-heading {
+  color: #485568;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.menu {
+  padding: 24px;
+  background-color: #1D2531;
+  /*   
+  overflow-y: scroll;
+ 
+  & 
+  ::-webkit-scrollbar{
+    width: 2px;
+  } */
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+
+}
+
+.sidebar ul li a {
+  color: #9ba2ad;
+  font-size: 16px !important;
+  font-weight: 0 !important;
+  text-decoration: none;
+  padding: 10px 0;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+  /* background-color: #4e8ef7; */
+  color: white;
+}
+
+.sidebar .submenu {
+  margin-left: 10px;
+}
+
+
+.cust-icon {
+  margin-right: 10px;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 100px 20px;
+}
+
+/* Topbar */
+.topbar {
+  position: fixed;
+  width: 100%;
+  max-width: 1099px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 0 250px;
+  padding: 0 20px;
+  height: 70px;
+  /* margin-bottom: 20px; */
+  background-color: #FEFEFF;
+  opacity: 0.98;
+}
+
+.aaa {
+ 
+  border: solid 1px grey;
+
+}
+
+.topbar .search {
+  padding: 10px;
+  margin-left: 20px;
+  width: 300px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.buy-btn {
+  background-color: #4e8ef7;
+  color: white;
+  /* width: 92px; */
+  height: 33px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buy-btn:hover {
+  background-color: #3571d4;
+}
+
+/* Content Area */
+
+.content-wrapper {
+  display: flex;
+
+}
+
+.content h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.content .box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content .box h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.content .box .details {
+  background-color: #f4f6f9;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.content .box .details p {
+  margin-bottom: 5px;
+}
+
+/* Topics */
+.topics {
+  width: 338px;
+  height: 450px;
+  background-color: white;
+  padding: 20px;
+  margin: 0 0 0 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 115px;
+}
+
+.topics h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.topics ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.topics ul li {
+  margin-bottom: 10px;
+}
+
+.topics ul li a {
+  color: #4e8ef7;
+  text-decoration: none;
+}
+
+.topics ul li a:hover {
+  text-decoration: underline;
+}
+
+
+
+:root {
+  --bs-border-width: 0px;
+  /* Define your own border width variable */
+  --bs-accordion-border-width: var(--bs-border-width);
+  /* Use var() to reference another variable */
+}
+
+/* Example usage */
+.accordion-item {
+  border-width: var(--bs-accordion-border-width);
+  /* Use the variable where needed */
+  background-color: transparent !important;
+}
+
+
+.accordion {
+  border-width: 0 !important;
+
+}
+
+.accordion-header {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.accordion-button {
+  background-color: #1D2531 !important;
+
+  padding: 10px 0px;
+  color: #9ba2ad !important;
+
+  /* color: white !important; */
+}
+
+.cust-circle-icon {
+  color: #9ba2ad;
+  padding-right: 10px;
+}
+
+.accordion-body ul {
+  padding: 0;
+}
+
+.accordion-body ul li {
+  display: flex;
+  align-items: center;
+}
+
+
+
+button:focus {
+  border: none !important;
+  outline-style: none !important;
+}
+
+
+
+/* Login Page css here */
+
+
+
+
+/* .accordion-button:not(.collapsed)::after {
+  background-image: url("../src/assets/icons/down-arrow.png");
+  
+  transform: var(--bs-accordion-btn-icon-transform);
+} */
+
+
+/* Accordion button when expanded (not collapsed) */
+.accordion-button:not(.collapsed)::after {
+  background-image: url("../src/assets/icons/up-arrow.png");
+  transform: rotate(180deg); /* Adjust the transform if necessary */
+}
+
+/* Accordion button when collapsed */
+.accordion-button.collapsed::after {
+  background-image: url("../src/assets/icons/down-arrow.png");
+  transform: var(--bs-accordion-btn-icon-transform); /* Use Bootstrap's variable or your own value */
+}
+
+
