@@ -3,8 +3,18 @@ import ".././App.css";
 import Logo from "./../assets/Images/full-logo.png";
 import Test from "./Test";
 
+import { useNavigate } from "react-router-dom";
+
 
 function Dashboard() {
+
+    const navigate = useNavigate();
+
+    function logoutHandle() {
+        navigate('/', { replace: true }) 
+    }
+
+
     return (
         <>
             <div className="container-wrapper">
@@ -187,8 +197,11 @@ function Dashboard() {
                             </a>
                         </li>
 
+                        {/* logout button */}
 
-
+                        <li>
+                            <button onClick={logoutHandle} >Logout</button>
+                        </li>
 
 
                     </ul>

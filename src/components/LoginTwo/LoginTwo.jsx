@@ -6,6 +6,11 @@ import GoogleLogo from "../../assets/icons/google-fill.svg"
 import LinkedinLogo from "../../assets/icons/linkedin-fill.svg"
 
 import SupplyValid from "../../assets/icons/SV-Logo.svg"
+import { useNavigate } from 'react-router-dom';
+import Dashboard from "../Dashboard";
+
+// import validator from "validator";
+
 
 
 function LoginTwo() {
@@ -15,6 +20,8 @@ function LoginTwo() {
     const [captcha, setCaptcha] = useState('');
     const [captchaInput, setCaptchaInput] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
+
 
 
 
@@ -32,7 +39,7 @@ function LoginTwo() {
     const handlePasswordChange = (e) => {
         const value = e.target.value;
         setPassword(value);
-       
+
     };
 
 
@@ -40,20 +47,31 @@ function LoginTwo() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        if (mobile[0] != '7' && mobile[0] != '8' && mobile[0] != '9') {
+        if (mobile[0] != '6' && mobile[0] != '7' && mobile[0] != '8' && mobile[0] != '9') {
             // e.preventDefault();
             setErrorMessage('Mobile no. must start with 7,8,or 9');
             return
         }
 
-        if (password.length >=  8){
+        if (password.length <= 8) {
             alert("Please validate password!!")
             return
         }
 
+        // if (validator.isStrongPassword (value , {
+        //     minLength: 8, minLowercase: 1, 
+        // 	minUppercase: 1, minNumbers: 1, minSymbols: 1 
+        // })) { 
+        // 	setErrorMessage('Is Strong Password') 
+        // } else { 
+        // 	setErrorMessage('Is Not Strong Password') 
+        // } 
+
+
         if (captcha === captchaInput) {
             setErrorMessage('');
             alert('Login successful!');
+            navigate('/dashboard');
             // Continue with the login process (e.g., API call)
         } else {
             setErrorMessage('Incorrect CAPTCHA. Please try again.');
@@ -105,21 +123,23 @@ function LoginTwo() {
                                 <div className="input-form">
                                     <div className="user-input ">
                                         <input type="tel"
-                                         id="mobile" 
-                                         name="mobile" 
-                                         onChange={(e) => setMobile(e.target.value)}  
-                                         value={mobile} 
-                                         placeholder="Mobile Number" 
-                                         required />
+                                            id="mobile"
+                                            name="mobile"
+                                            onChange={(e) => setMobile(e.target.value)}
+                                            value={mobile}
+                                            placeholder="Mobile Number"
+                                            required />
                                     </div>
 
                                     <div className="user-input ">
-                                        <input type="password"  id="password" name="password" onChange={handlePasswordChange}  value={password} placeholder="Password" required />
+                                        <input type="password" id="password" name="password" onChange={handlePasswordChange} value={password} placeholder="Password" required />
                                     </div>
 
                                     <div className="user-input ">
                                         <div>
-                                            <label htmlFor="captcha">Captcha: <span className="captcha-text">{captcha}</span></label>
+                                            <label htmlFor="captcha" style={{ userSelect: "none"}} >Captcha:
+                                                <span className="captcha-text">{captcha}</span>
+                                            </label>
                                         </div>
 
                                         <input
