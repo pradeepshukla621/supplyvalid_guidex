@@ -116,7 +116,8 @@ function LoginTwo() {
                     <div className="col-lg-6 right-section">
                         <img style={{ width: "40%", paddingBottom: "10px" }} src={SupplyValid} />
                         {/* <h1>SupplyValid</h1> */}
-                        <p>Sign Into Your Account</p>
+                        <p>Sign Into Your Account </p>
+                        <p>Jai mata di</p>
 
                         <div className="form-wrapper">
                             <form action="" onSubmit={handleSubmit}>
