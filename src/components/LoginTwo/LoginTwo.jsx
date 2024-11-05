@@ -8,6 +8,7 @@ import LinkedinLogo from "../../assets/icons/linkedin-fill.svg"
 import SupplyValid from "../../assets/icons/SV-Logo.svg"
 import { useNavigate } from 'react-router-dom';
 import Dashboard from "../Dashboard";
+import axios from 'axios';
 
 // import validator from "validator";
 
@@ -44,7 +45,7 @@ function LoginTwo() {
 
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
         if (mobile[0] != '6' && mobile[0] != '7' && mobile[0] != '8' && mobile[0] != '9') {
@@ -67,6 +68,22 @@ function LoginTwo() {
         // 	setErrorMessage('Is Not Strong Password') 
         // } 
 
+        const payload = {
+            "mobileno": "9999299398",
+            "password": "Onion@2024",
+            "companypath": "supplyvalid"
+        }
+
+        
+        const response = await axios.post('https://dev-backend-2024.epravaha.com/api/login/svadmin', payload, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        console.log('Success:', response.data);
+
+
+
 
         if (captcha === captchaInput) {
             setErrorMessage('');
@@ -78,7 +95,7 @@ function LoginTwo() {
             generateCaptcha(); // Generate new CAPTCHA if incorrect
             setCaptchaInput('');
         };
-        e.prevent.default();
+        // e.prevent.default();
     }
 
 
