@@ -7,8 +7,11 @@ import LinkedinLogo from "../../assets/icons/linkedin-fill.svg"
 
 import SupplyValid from "../../assets/icons/SV-Logo.svg"
 import { useNavigate } from 'react-router-dom';
-import Dashboard from "../Dashboard";
-import axios from 'axios';
+import baseUrl from "../../baseUrl"
+
+
+
+
 
 // import validator from "validator";
 
@@ -74,15 +77,22 @@ function LoginTwo() {
             "companypath": "supplyvalid"
         }
 
-        
-        const response = await axios.post('https://dev-backend-2024.epravaha.com/api/login/svadmin', payload, {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-        console.log('Success:', response.data);
 
+        // const response = await axios.post('https://dev-backend-2024.epravaha.com/api/login/svadmin', payload, {
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        // });
+        // console.log('Success:', response.data);
 
+        baseUrl.post('api/login/svadmin', payload).then(response => {
+            console.log(response)
+
+        })
+            .catch(error => {
+                console.log(error)
+
+            });
 
 
         if (captcha === captchaInput) {
@@ -154,7 +164,7 @@ function LoginTwo() {
 
                                     <div className="user-input ">
                                         <div>
-                                            <label htmlFor="captcha" style={{ userSelect: "none"}} >Captcha:
+                                            <label htmlFor="captcha" style={{ userSelect: "none" }} >Captcha:
                                                 <span className="captcha-text">{captcha}</span>
                                             </label>
                                         </div>
@@ -188,6 +198,7 @@ function LoginTwo() {
 
                                 <button className="submit-button" type="submit">LOGIN</button>
                             </form>
+
                         </div>
                     </div>
                 </div>

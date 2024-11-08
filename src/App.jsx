@@ -6,25 +6,27 @@ import LoginTwo from './components/LoginTwo/LoginTwo.jsx'
 import LoginThree from './components/LoginThree/LoginThree.jsx'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import BaseUrl from './baseUrl.jsx'
 
 
 function App() {
-  
+
 
   return (
     <>
-     {/* <Dashboard /> */}
-    {/* <Login /> */}
-    {/* <LoginTwo /> */}
-    {/* <LoginThree /> */}
-    {/* <Text /> */}
+      {/* <Dashboard /> */}
+      {/* <Login /> */}
+      {/* <LoginTwo /> */}
+      {/* <LoginThree /> */}
+      {/* <Text /> */}
+  
 
-    <Router>
-            <Routes>
-                <Route path="/" element={<LoginTwo /> } />
-                <Route path="/dashboard" element={<Dashboard />} />
-            </Routes>
-        </Router>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LoginTwo />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </Router>
     </>
   )
 }
