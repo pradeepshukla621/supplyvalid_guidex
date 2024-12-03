@@ -64,7 +64,7 @@ body {
   text-decoration: none;
   padding: 10px 0;
   border-radius: 4px;
-  transition: background 0.3s;
+  /* transition: background 0.3s; */
 }
 
 .sidebar ul li a:hover {
@@ -89,8 +89,9 @@ body {
 /* Topbar */
 .topbar {
   position: fixed;
-  width: 100%;
-  max-width: 1099px;
+  /* width: 100%; */
+  /* max-width: 1099px; */
+  width: calc(100% - 250px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -103,8 +104,10 @@ body {
 }
 
 .aaa {
- 
+
   border: solid 1px grey;
+  height: 18px;
+  width: 30px !important;
 
 }
 
@@ -142,6 +145,14 @@ body {
 
 }
 
+.content-text {
+  font-size: 13px;
+  color: #777;
+  line-height: 21px;
+  letter-spacing: 0.03rem;
+  font-weight: 300;
+}
+
 .content h1 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -152,6 +163,7 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 0 20px 0;
 }
 
 .content .box h2 {
@@ -169,6 +181,7 @@ body {
 .content .box .details p {
   margin-bottom: 5px;
 }
+
 
 /* Topics */
 .topics {
@@ -242,12 +255,12 @@ body {
 
   /* color: white !important; */
 
-  &:focus{
+  &:focus {
 
-    z-index: 0 !important; 
+    z-index: 0 !important;
     outline: 0 !important;
     box-shadow: none !important;
-    
+
 
 
 
@@ -292,13 +305,13 @@ button:focus {
 /* Accordion button when expanded (not collapsed) */
 .accordion-button:not(.collapsed)::after {
   background-image: url("../src/assets/icons/up-arrow.png");
-  transform: rotate(180deg); /* Adjust the transform if necessary */
+  transform: rotate(180deg);
+  /* Adjust the transform if necessary */
 }
 
 /* Accordion button when collapsed */
 .accordion-button.collapsed::after {
   background-image: url("../src/assets/icons/down-arrow.png");
-  transform: var(--bs-accordion-btn-icon-transform); /* Use Bootstrap's variable or your own value */
+  transform: var(--bs-accordion-btn-icon-transform);
+  /* Use Bootstrap's variable or your own value */
 }
-
-

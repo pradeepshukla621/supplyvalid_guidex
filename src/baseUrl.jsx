@@ -6,6 +6,28 @@ const baseUrl = axios.create({
         baseURL: 'https://dev-backend-2024.epravaha.com/'
     });
     
+    // baseUrl.interceptors.request.use(
+    //     (config) => {
+    //         // Modify config before the request is sent
+    //         console.log('Request Sent: ', config);
+    //         return config;
+    //     },
+    //     (error) => Promise.reject(error)
+    // );
+    
+
+    baseUrl.interceptors.request.use((request) => {
+        // debugger
+        console.log(request);
+        request.headers.channelname = 'Pradeep Web dev';
+        return request;
+    });
+
+    baseUrl.interceptors.response.use((response) => {
+        console.log(response);
+        return response;
+    });
+
 
 
 

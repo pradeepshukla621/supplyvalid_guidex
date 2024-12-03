@@ -2,6 +2,7 @@ import React from "react";
 import ".././App.css";
 import Logo from "./../assets/Images/full-logo.png";
 import Test from "./Test";
+import Arrow from "../assets/icons/greater-than-solid.svg"
 
 import { useNavigate } from "react-router-dom";
 
@@ -200,7 +201,7 @@ function Dashboard() {
                         {/* logout button */}
 
                         <li>
-                            <button onClick={logoutHandle} >Logout</button>
+                            <button className="buy-btn" onClick={logoutHandle} >Logout</button>
                         </li>
 
 
@@ -231,16 +232,25 @@ function Dashboard() {
 
 
                     <div className="content">
+                        <div className="d-flex justify-content-between">
                         <div className="">
                             <h1>Getting Started</h1>
                         </div>
 
+                        <div className="content-text ">
+                            <span>Guidex  </span>
+                            <span><img style={{ width: '12px', fill: '#777', color: 'red', backgroundColor: "green"}} src={Arrow} />  </span>
+                            <span>Getting Started</span>
+                        </div>
+
+                        </div>
+                        
 
 
                         <div className="content-wrapper">
                             <div className="">
                                 <div className="box">
-                                    <h2>Introduction</h2>
+                                    <h2 className="">Introduction</h2>
                                     <div className="details">
                                         <p><strong>Item Name:</strong> Guidex - Online Documentation Template.</p>
                                         <p><strong>Item Version:</strong> 3.1.0</p>
@@ -279,6 +289,7 @@ function Dashboard() {
                                 </div>
 
                                 {/* <Test /> */}
+                                <h2>hellloooooo</h2>
                                
                             </div>
 
